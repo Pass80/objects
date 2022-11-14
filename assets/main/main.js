@@ -48,13 +48,14 @@ const display = document.getElementById('display');
 let article = '<article>';
 let div = '';
 myMusic.forEach((obj) => {
-    div += `<div><p>${obj.artist}</p><p>${obj.title}</p><p>${
-        obj.medium
-    }</p><p>${(obj.release_year = '1973')}</p></div>`;
+    div += `<div><p>${obj.artist}</p><p>${obj.title}</p><p>${obj.medium}</p><p>${obj.release_year}</p></div>`;
 });
 
 article = div + '</article>';
 display.innerHTML = article;
+
+let olderThan1975 = myMusic.filter((obj) => obj.release_year <= 1975);
+console.log(olderThan1975);
 
 console.log('=======3===========');
 
